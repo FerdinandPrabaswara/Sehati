@@ -2,5 +2,8 @@
 <resources>
     <array name="preloaded_fonts" translatable="false">
         <item>@font/epilogue</item>
+        <item>@font/epilogue_bold</item>
+        <item>@font/epilogue_extrabold</item>
+        <item>@font/epilogue_medium</item>
     </array>
 </resources>
