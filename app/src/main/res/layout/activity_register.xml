@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <TextView
+        android:id="@+id/title"
+        android:text="@string/tittle_register"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="100dp"
+        android:gravity="center"
+        android:textSize="25sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/subtitle"
+        android:text="@string/subtittle_register"
+        android:layout_width="400dp"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:textColor="#8F8F8F"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title" />
+
+    <LinearLayout
+        android:id="@+id/form"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="25dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/subtitle">
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:text="@string/name"
+            android:textSize="16sp"
+            app:layout_constraintTop_toTopOf="@+id/email"/>
+        <EditText
+            android:id="@+id/et_name"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bg_inputauth"
+            android:drawablePadding="10dp"
+            android:drawableTint="@color/grey"
+            android:hint="Enter your name"
+            android:inputType="textPersonName"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:textColorHint="@color/grey"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@id/email" />
+        <TextView
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:layout_marginTop="15dp"
+            android:text="@string/email"
+            android:textSize="16sp"
+            app:layout_constraintTop_toTopOf="@+id/et_email"/>
+        <EditText
+            android:id="@+id/et_email"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bg_inputauth"
+            android:drawablePadding="10dp"
+            android:drawableTint="@color/grey"
+            android:hint="Example@gmail.com"
+            android:inputType="textEmailAddress"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:textColorHint="@color/grey"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@id/email" />
+        <TextView
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:text="@string/password"
+            android:layout_marginTop="15dp"
+            android:textSize="16sp"
+            app:layout_constraintTop_toTopOf="@+id/et_email"/>
+        <EditText
+            android:id="@+id/et_password"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:drawableEnd="@drawable/hide_password"
+            android:background="@drawable/bg_inputauth"
+            android:drawablePadding="10dp"
+            android:drawableTint="@color/grey"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:textColorHint="@color/grey"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@id/email"/>
+        <Button
+            android:id="@+id/btn_login"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/bg_authbutton"
+            android:text="@string/regist"
+            android:textSize="20sp"/>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

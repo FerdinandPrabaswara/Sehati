@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">Sehati</string>
+    <string name="tittle_login"><b>You must Login to consult</b></string>
+    <string name="subtittle_login"><b>We are here to hear you</b></string>
+    <string name="tittle_register"><b>Welcome to Sehati!</b></string>
+    <string name="subtittle_register"><b>Regist for free and do consultation</b></string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="login"><b>Login</b></string>
+    <string name="donthave">Don\'t have an account?</string>
+    <string name="regist"><b>Register</b></string>
+    <string name="name">Name</string>
 </resources>
