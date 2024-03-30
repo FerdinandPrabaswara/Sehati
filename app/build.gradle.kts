@@ -28,6 +28,12 @@ android {
         }
     }
 
+    android {
+        defaultConfig {
+            vectorDrawables.useSupportLibrary = true
+        }
+    }
+
     buildFeatures {
         viewBinding = true;
     }
