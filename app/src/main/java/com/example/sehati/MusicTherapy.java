@@ -4,11 +4,15 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
+import com.example.sehati.databinding.ActivityMusicTherapyBinding;
+
 public class MusicTherapy extends AppCompatActivity {
 
+    ActivityMusicTherapyBinding binding;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_music_therapy);
+        binding = ActivityMusicTherapyBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
     }
 }
