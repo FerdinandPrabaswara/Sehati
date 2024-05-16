@@ -94,6 +94,7 @@
             android:layout_marginTop="40dp"
             android:background="@drawable/bg_authbutton"
             android:text="@string/login"
+            android:textColor="@color/white"
             android:textSize="20sp"/>
     </LinearLayout>
 
