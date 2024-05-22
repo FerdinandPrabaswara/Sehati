@@ -7,13 +7,15 @@
 
     <ImageView
         android:id="@+id/iv_background_confirm"
-        android:layout_width="match_parent"
-        android:layout_height="1400px"
+        android:layout_width="408dp"
+        android:layout_height="616dp"
         android:background="@drawable/bgonlineappointment"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.343" />
 
     <TextView
         android:id="@+id/textView11"
@@ -96,8 +98,8 @@
         android:id="@+id/textView17"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="104dp"
+        android:layout_marginStart="76dp"
+        android:layout_marginTop="108dp"
         android:text="Total"
         android:textSize="70px"
         app:layout_constraintStart_toStartOf="parent"
@@ -107,8 +109,8 @@
         android:id="@+id/tv_amount_cost_medicine"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="188dp"
-        android:layout_marginTop="104dp"
+        android:layout_marginStart="160dp"
+        android:layout_marginTop="108dp"
         android:text="95.000"
         android:textSize="70px"
         app:layout_constraintStart_toEndOf="@+id/textView17"
@@ -118,8 +120,8 @@
         android:id="@+id/textView19"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginStart="76dp"
+        android:layout_marginTop="40dp"
         android:text="Saldo"
         android:textSize="70px"
         app:layout_constraintStart_toStartOf="parent"
@@ -129,8 +131,8 @@
         android:id="@+id/textView21"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="180dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginStart="152dp"
+        android:layout_marginTop="40dp"
         android:text="30.000"
         android:textSize="70px"
         app:layout_constraintStart_toEndOf="@+id/textView19"
@@ -139,8 +141,8 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:layout_marginEnd="80dp"
+        android:layout_marginTop="52dp"
+        android:layout_marginEnd="76dp"
         android:text="Confirm"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView21" />
@@ -149,10 +151,43 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="76dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="52dp"
         android:text="Top Up"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView19" />
+
+    <TextView
+        android:id="@+id/textView20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="28dp"
+        android:text="Obat tidur"
+        android:textSize="70px"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView13" />
+
+    <TextView
+        android:id="@+id/textView22"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="28dp"
+        android:text="3"
+        android:textSize="70px"
+        app:layout_constraintStart_toEndOf="@+id/textView20"
+        app:layout_constraintTop_toBottomOf="@+id/textView15" />
+
+    <TextView
+        android:id="@+id/textView23"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="28dp"
+        android:text="10.000"
+        android:textSize="70px"
+        app:layout_constraintStart_toEndOf="@+id/textView22"
+        app:layout_constraintTop_toBottomOf="@+id/textView18" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
