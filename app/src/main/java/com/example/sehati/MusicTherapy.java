@@ -14,5 +14,7 @@ public class MusicTherapy extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityMusicTherapyBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+
     }
 }

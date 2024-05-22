@@ -1,2 +1,5 @@
-package com.example.sehati.adapter;public class MusicTherapyAdapter {
+package com.example.sehati.adapter;
+
+public class MusicTherapyAdapter {
+
 }
