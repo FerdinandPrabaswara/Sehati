@@ -10,4 +10,18 @@
     <string name="donthave">Don\'t have an account?</string>
     <string name="regist"><b>Register</b></string>
     <string name="name">Name</string>
+    
+    <string name="meditationDetails">Meditation Details</string>
+
+    <string-array name="meditation_music_txt">
+        <item>Morning Routine</item>
+        <item>Re-energize Afternoon</item>
+        <item>Calm Mind Night</item>
+    </string-array>
+
+    <string-array name="meditation_desc_txt">
+        <item>Waking up your morning with relax mind</item>
+        <item>Charge your energy to continue your day</item>
+        <item>Calm and relax your mind for today</item>
+    </string-array>
 </resources>
