@@ -25,16 +25,12 @@ public class MusicTherapyActivity extends AppCompatActivity {
     private DatabaseReference databaseReference;
     private List<MusicTherapy> musicTherapyList;
     private MusicTherapyAdapter musicTherapyAdapter;
-//    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityMusicTherapyBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-
-        // Initialize FirebaseAuth instance
-//        mAuth = FirebaseAuth.getInstance();
 
         // Initialize RecyclerView
         binding.recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -45,17 +41,8 @@ public class MusicTherapyActivity extends AppCompatActivity {
         // Initialize Firebase Database
         databaseReference = FirebaseDatabase.getInstance().getReference("musicTherapies");
 
-        // Check authentication status
-//        FirebaseUser currentUser = mAuth.getCurrentUser();
-//        if (currentUser != null) {
-//            // User is authenticated, proceed with database access
-//            fetchMusicTherapyData();
-//        } else {
-//            // User is not authenticated, handle accordingly (e.g., prompt for login)
-//            Toast.makeText(this, "Please log in to access data", Toast.LENGTH_SHORT).show();
-//            // Redirect user to login activity or prompt for login
-//            // Example: startActivity(new Intent(this, LoginActivity.class));
-//        }
+        fetchMusicTherapyData();
+
     }
 
     private void fetchMusicTherapyData() {
