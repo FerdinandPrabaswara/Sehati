@@ -20,7 +20,9 @@ public class Home extends AppCompatActivity {
         binding.relaxMusic.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent relax = new Intent(Home.this, RelaxMusic.class);
+
+                Intent relax = new Intent(Home.this, MusicTherapyActivity.class);
+                startActivity(relax);
             }
         });
 

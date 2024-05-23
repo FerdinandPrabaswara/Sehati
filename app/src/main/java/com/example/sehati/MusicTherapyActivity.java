@@ -1,22 +1,31 @@
 package com.example.sehati;
-
-import static android.content.ContentValues.TAG;
-
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Toast;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import com.example.sehati.adapter.MusicTherapyAdapter;
 import com.example.sehati.databinding.ActivityMusicTherapyBinding;
 import com.example.sehati.model.MusicTherapy;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import java.util.ArrayList;
+import java.util.List;
 
 public class MusicTherapyActivity extends AppCompatActivity {
 
     private ActivityMusicTherapyBinding binding;
     private DatabaseReference databaseReference;
+    private List<MusicTherapy> musicTherapyList;
+    private MusicTherapyAdapter musicTherapyAdapter;
+//    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,65 +33,47 @@ public class MusicTherapyActivity extends AppCompatActivity {
         binding = ActivityMusicTherapyBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        // Initialize FirebaseAuth instance
+//        mAuth = FirebaseAuth.getInstance();
+
+        // Initialize RecyclerView
+        binding.recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        musicTherapyList = new ArrayList<>();
+        musicTherapyAdapter = new MusicTherapyAdapter(this, musicTherapyList);
+        binding.recyclerView.setAdapter(musicTherapyAdapter);
+
         // Initialize Firebase Database
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        databaseReference = database.getReference("musicTherapies");
+        databaseReference = FirebaseDatabase.getInstance().getReference("musicTherapies");
 
-        // Example CRUD operations
-        createMusicTherapy(new MusicTherapy("photoUrl", "Relaxing Music", "Author Name", "3:45"));
-        readMusicTherapy("musicTherapyId");
-        updateMusicTherapy("musicTherapyId", new MusicTherapy("newPhotoUrl", "New Title", "New Author", "4:00"));
-        deleteMusicTherapy("musicTherapyId");
+        // Check authentication status
+//        FirebaseUser currentUser = mAuth.getCurrentUser();
+//        if (currentUser != null) {
+//            // User is authenticated, proceed with database access
+//            fetchMusicTherapyData();
+//        } else {
+//            // User is not authenticated, handle accordingly (e.g., prompt for login)
+//            Toast.makeText(this, "Please log in to access data", Toast.LENGTH_SHORT).show();
+//            // Redirect user to login activity or prompt for login
+//            // Example: startActivity(new Intent(this, LoginActivity.class));
+//        }
     }
 
-    private void createMusicTherapy(MusicTherapy musicTherapy) {
-        String id = databaseReference.push().getKey();
-        if (id != null) {
-            databaseReference.child(id).setValue(musicTherapy).addOnCompleteListener(task -> {
-                if (task.isSuccessful()) {
-                    Log.d(TAG, "MusicTherapy created successfully");
-                } else {
-                    Log.w(TAG, "Failed to create MusicTherapy", task.getException());
-                }
-            });
-        }
-    }
-
-    private void readMusicTherapy(String id) {
-        databaseReference.child(id).addListenerForSingleValueEvent(new ValueEventListener() {
+    private void fetchMusicTherapyData() {
+        databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
-            public void onDataChange(DataSnapshot snapshot) {
-                MusicTherapy musicTherapy = snapshot.getValue(MusicTherapy.class);
-                if (musicTherapy != null) {
-                    Log.d(TAG, "MusicTherapy data: " + musicTherapy.getTitle());
-                } else {
-                    Log.w(TAG, "MusicTherapy not found");
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                musicTherapyList.clear();
+                for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
+                    MusicTherapy musicTherapy = dataSnapshot.getValue(MusicTherapy.class);
+                    musicTherapyList.add(musicTherapy);
                 }
+                musicTherapyAdapter.notifyDataSetChanged();
             }
 
             @Override
-            public void onCancelled(DatabaseError error) {
-                Log.w(TAG, "Failed to read MusicTherapy", error.toException());
-            }
-        });
-    }
-
-    private void updateMusicTherapy(String id, MusicTherapy musicTherapy) {
-        databaseReference.child(id).setValue(musicTherapy).addOnCompleteListener(task -> {
-            if (task.isSuccessful()) {
-                Log.d(TAG, "MusicTherapy updated successfully");
-            } else {
-                Log.w(TAG, "Failed to update MusicTherapy", task.getException());
-            }
-        });
-    }
-
-    private void deleteMusicTherapy(String id) {
-        databaseReference.child(id).removeValue().addOnCompleteListener(task -> {
-            if (task.isSuccessful()) {
-                Log.d(TAG, "MusicTherapy deleted successfully");
-            } else {
-                Log.w(TAG, "Failed to delete MusicTherapy", task.getException());
+            public void onCancelled(@NonNull DatabaseError error) {
+                Toast.makeText(MusicTherapyActivity.this, "Failed to fetch data: " + error.getMessage(), Toast.LENGTH_SHORT).show();
+                Log.e("Firebase", "Failed to fetch data: " + error.getMessage());
             }
         });
     }
