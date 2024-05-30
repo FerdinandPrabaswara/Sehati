@@ -7,6 +7,7 @@
     android:background="@color/white"
     tools:context=".OnlineAppointment">
 
+    <!-- Bagian layout yang tetap -->
     <ImageView
         android:id="@+id/upcomingSessionBox"
         android:layout_width="318dp"
@@ -28,8 +29,8 @@
         android:layout_marginTop="20dp"
         android:fontFamily="@font/epilogue_extrabold"
         android:text="Online Appointment"
-        android:textSize="20dp"
         android:textColor="@color/brown"
+        android:textSize="20dp"
         app:layout_constraintStart_toStartOf="@+id/upcomingSessionBox"
         app:layout_constraintTop_toTopOf="@+id/upcomingSessionBox" />
 
@@ -39,10 +40,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="4dp"
-        android:text="Sahana V, Msc in Clinical Psychology"
-        android:textSize="10dp"
-        android:textColor="@color/brown"
         android:fontFamily="@font/epilogue"
+        android:text="Sahana V, Msc in Clinical Psychology"
+        android:textColor="@color/brown"
+        android:textSize="10dp"
         app:layout_constraintStart_toStartOf="@+id/upcomingSessionBox"
         app:layout_constraintTop_toBottomOf="@+id/tv_upcoming_session" />
 
@@ -52,10 +53,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="4dp"
-        android:text="00:00 PM - 01:00 PM"
-        android:textSize="10dp"
-        android:textColor="@color/brown"
         android:fontFamily="@font/epilogue_bold"
+        android:text="00:00 PM - 01:00 PM"
+        android:textColor="@color/brown"
+        android:textSize="10dp"
         app:layout_constraintStart_toStartOf="@+id/upcomingSessionBox"
         app:layout_constraintTop_toBottomOf="@+id/tv_identity" />
 
@@ -105,10 +106,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="4dp"
+        android:fontFamily="@font/epilogue_bold"
         android:text="Appointment Date :"
         android:textColor="@color/orange"
         android:textSize="10dp"
-        android:fontFamily="@font/epilogue_bold"
         app:layout_constraintStart_toStartOf="@+id/scheduleBox"
         app:layout_constraintTop_toBottomOf="@+id/tv_schedule" />
 
@@ -118,10 +119,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="4dp"
-        android:text="dummy"
+        android:fontFamily="@font/epilogue"
+        android:text=""
         android:textColor="@color/brown"
         android:textSize="10dp"
-        android:fontFamily="@font/epilogue"
         app:layout_constraintStart_toStartOf="@+id/scheduleBox"
         app:layout_constraintTop_toBottomOf="@+id/tv_dateText" />
 
@@ -129,89 +130,24 @@
         android:id="@+id/searchBtn"
         android:layout_width="100dp"
         android:layout_height="32dp"
-        android:layout_marginStart="136dp"
-        android:layout_marginTop="4dp"
-        android:background="@drawable/bg_orange_btn"
-        android:text="Search"
-        android:textColor="@color/white"
-        android:textSize="10dp"
-        app:layout_constraintStart_toEndOf="@+id/tv_appointment_date"
-        app:layout_constraintTop_toBottomOf="@+id/tv_schedule" />
-
-    <ImageView
-        android:id="@+id/doctorBox"
-        android:layout_width="318dp"
-        android:layout_height="113dp"
-        android:layout_marginTop="16dp"
-        android:scaleType="centerCrop"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/scheduleBox"
-        app:srcCompat="@drawable/bg_grey" />
-
-    <TextView
-        android:id="@+id/doctorName"
-        android:layout_width="60dp"
-        android:layout_height="17dp"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="20dp"
-        android:fontFamily="@font/epilogue_bold"
-        android:text="Sahana V"
-        android:textColor="@color/brown"
-        android:textSize="12dp"
-        app:layout_constraintStart_toStartOf="@+id/doctorBox"
-        app:layout_constraintTop_toTopOf="@+id/doctorBox" />
-
-    <TextView
-        android:id="@+id/doctorDetail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="4dp"
-        android:fontFamily="@font/epilogue"
-        android:text="Msc in Clinical Psychology"
-        android:textColor="@color/brown"
-        android:textSize="10dp"
-        app:layout_constraintStart_toStartOf="@+id/doctorBox"
-        app:layout_constraintTop_toBottomOf="@+id/doctorName" />
-
-    <ImageView
-        android:id="@+id/imageView8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginBottom="20dp"
-        android:src="@drawable/time_icon"
-        app:layout_constraintBottom_toBottomOf="@+id/doctorBox"
-        app:layout_constraintStart_toStartOf="@+id/doctorBox" />
-
-    <TextView
-        android:id="@+id/doctorTime"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
+        android:layout_marginEnd="24dp"
         android:layout_marginBottom="24dp"
-        android:fontFamily="@font/epilogue"
-        android:text="7:30 PM - 8:30 PM"
-        android:textColor="@color/dark_grey"
-        android:textSize="10dp"
-        app:layout_constraintBottom_toBottomOf="@+id/doctorBox"
-        app:layout_constraintStart_toEndOf="@+id/imageView8"
-        app:layout_constraintTop_toBottomOf="@+id/doctorDetail"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <Button
-        android:id="@+id/scheduleBtn"
-        android:layout_width="100dp"
-        android:layout_height="32dp"
-        android:layout_marginEnd="20dp"
         android:background="@drawable/bg_orange_btn"
         android:text="Search"
         android:textColor="@color/white"
         android:textSize="10dp"
-        app:layout_constraintBottom_toBottomOf="@+id/doctorBox"
-        app:layout_constraintEnd_toEndOf="@+id/doctorBox"
-        app:layout_constraintTop_toTopOf="@+id/doctorBox"
-        app:layout_constraintVertical_bias="0.839" />
+        app:layout_constraintBottom_toBottomOf="@+id/scheduleBox"
+        app:layout_constraintEnd_toEndOf="@+id/scheduleBox" />
+
+    <!-- RecyclerView untuk menggantikan bagian yang diminta -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/scheduleBox"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:listitem="@layout/item_doctor"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
