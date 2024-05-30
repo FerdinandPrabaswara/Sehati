@@ -118,7 +118,7 @@
                 android:layout_height="30dp"
                 android:layout_marginEnd="10dp"
                 android:layout_alignParentEnd="true"
-                android:layout_centerVertical="true"
+                android:layout_centerVertical="false"
                 android:src="@drawable/hide_password"
                 android:contentDescription="Show/Hide Password" />
         </RelativeLayout>
