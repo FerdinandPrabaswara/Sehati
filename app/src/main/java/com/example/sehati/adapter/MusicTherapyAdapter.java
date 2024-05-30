@@ -1,15 +1,22 @@
+// MusicTherapyAdapter.java
 package com.example.sehati.adapter;
+
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
 import com.bumptech.glide.Glide;
 import com.example.sehati.R;
+import com.example.sehati.RelaxMusic;
 import com.example.sehati.model.MusicTherapy;
+
 import java.util.List;
 
 public class MusicTherapyAdapter extends RecyclerView.Adapter<MusicTherapyAdapter.MusicTherapyViewHolder> {
@@ -37,6 +44,15 @@ public class MusicTherapyAdapter extends RecyclerView.Adapter<MusicTherapyAdapte
 
         // Load image using Glide
         Glide.with(context).load(musicTherapy.getPhoto()).into(holder.imgMusic);
+
+        // Set click listener
+        holder.itemView.setOnClickListener(v -> {
+            Intent intent = new Intent(context, RelaxMusic.class);
+            intent.putExtra("MUSIC_THERAPY_TITLE", musicTherapy.getTitle());
+            intent.putExtra("MUSIC_THERAPY_AUTHOR", musicTherapy.getAuthor());
+            intent.putExtra("MUSIC_THERAPY_DURATION", musicTherapy.getDuration());
+            context.startActivity(intent);
+        });
     }
 
     @Override
