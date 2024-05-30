@@ -47,7 +47,7 @@
             android:name=".OnlineAppointment"
             android:exported="false" />
         <activity
-            android:name=".MusicTherapy"
+            android:name=".MusicTherapyActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
