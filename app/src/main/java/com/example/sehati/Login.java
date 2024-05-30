@@ -34,6 +34,11 @@ public class Login extends AppCompatActivity {
         etPassword  = findViewById(R.id.et_password);
         tvRegist    = findViewById(R.id.regist);
 
+        String emailFromRegister = getIntent().getStringExtra("email");
+        if (emailFromRegister != null && !emailFromRegister.isEmpty()) {
+            etEmail.setText(emailFromRegister);
+        }
+
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -44,8 +49,7 @@ public class Login extends AppCompatActivity {
                 if (email.isEmpty() || password.isEmpty()){
                     Toast.makeText(Login.this, "Please fill in all fields", Toast.LENGTH_SHORT).show();
                 } else {
-                    mAuth.signInWithEmailAndPassword(email, password)
-                            .addOnCompleteListener(Login.this, new OnCompleteListener<AuthResult>() {
+                    mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(Login.this, new OnCompleteListener<AuthResult>() {
                                 @Override
                                 public void onComplete(@NonNull Task<AuthResult> task) {
                                     if (task.isSuccessful()) {
@@ -62,7 +66,6 @@ public class Login extends AppCompatActivity {
 
             }
         });
-
         tvRegist.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
