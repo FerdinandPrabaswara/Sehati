@@ -9,6 +9,10 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.sehati.adapter.DoctorAdapter;
+import com.example.sehati.model.Doctor;
+
 import java.util.ArrayList;
 import java.util.List;
 

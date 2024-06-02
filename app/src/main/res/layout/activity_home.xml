@@ -38,7 +38,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/relaxMusic"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -58,7 +58,7 @@
         android:layout_marginTop="16dp"
         app:layout_constraintEnd_toStartOf="@+id/imageView3"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintStart_toEndOf="@+id/relaxMusic"
         app:layout_constraintTop_toBottomOf="@+id/textView"
         app:srcCompat="@drawable/calmmusictherapy" />
 
@@ -96,10 +96,10 @@
         android:text="Relax"
         android:textColor="#828282"
         android:textSize="12sp"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintEnd_toEndOf="@+id/relaxMusic"
         app:layout_constraintHorizontal_bias="0.483"
-        app:layout_constraintStart_toStartOf="@+id/imageView"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintStart_toStartOf="@+id/relaxMusic"
+        app:layout_constraintTop_toBottomOf="@+id/relaxMusic" />
 
     <TextView
         android:id="@+id/textView4"
@@ -194,9 +194,9 @@
         android:layout_width="129dp"
         android:layout_height="33dp"
         android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="@+id/textView8"
         app:layout_constraintTop_toBottomOf="@+id/textView8"
-        app:srcCompat="@drawable/bgbuttonprimary"
-        tools:layout_editor_absoluteX="48dp" />
+        app:srcCompat="@drawable/bgbuttonprimary" />
 
     <ImageView
         android:id="@+id/imageView10"

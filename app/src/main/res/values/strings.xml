@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Sehati</string>
-    <string name="tittle_login"><b>You must Login to consult</b></string>
+    <string name="tittle_login"><b>Please Login for Consulting</b></string>
     <string name="subtittle_login"><b>We are here to hear you</b></string>
     <string name="tittle_register"><b>Welcome to Sehati!</b></string>
     <string name="subtittle_register"><b>Regist for free and do consultation</b></string>
