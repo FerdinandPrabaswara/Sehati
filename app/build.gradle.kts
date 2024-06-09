@@ -29,12 +29,6 @@ android {
         }
     }
 
-    android {
-        defaultConfig {
-            vectorDrawables.useSupportLibrary = true
-        }
-    }
-
     buildFeatures {
         viewBinding = true;
     }
@@ -53,6 +47,7 @@ dependencies {
     implementation("com.google.firebase:firebase-database:21.0.0")
     implementation("com.github.bumptech.glide:glide:4.12.0")
     implementation("com.google.firebase:firebase-auth:23.0.0")
+    implementation("androidx.activity:activity:1.8.0")
 //    implementation("com.google.firebase:firebase-auth:23.0.0")
     annotationProcessor("com.github.bumptech.glide:compiler:4.12.0")
     implementation("org.mindrot:jbcrypt:0.4")

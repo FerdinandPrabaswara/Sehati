@@ -109,7 +109,6 @@
             android:layout_marginTop="40dp"
             android:background="@drawable/bg_authbutton"
             android:text="@string/login"
-            android:textColor="@color/white"
             android:textSize="20sp"/>
     </LinearLayout>
 
@@ -126,9 +125,9 @@
         <TextView
             android:id="@+id/donthave"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:text="@string/donthave"
-            android:textSize="16sp"/>
+            android:textSize="16sp" />
 
         <TextView
             android:id="@+id/regist"
