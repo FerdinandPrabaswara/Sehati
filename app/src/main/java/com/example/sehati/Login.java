@@ -13,7 +13,6 @@ public class Login extends AppCompatActivity {
     Button btnLogin;
     EditText etEmail, etPassword;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
