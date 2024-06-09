@@ -1,5 +1,8 @@
 {
   "project_info": {
+
+  
+
     "project_number": "162963644184",
     "project_id": "musictherapy-69071",
     "storage_bucket": "musictherapy-69071.appspot.com"
@@ -7,20 +10,28 @@
   "client": [
     {
       "client_info": {
+
+      
+
         "mobilesdk_app_id": "1:162963644184:android:4fd08d6e9aee8b1b54886d",
+
         "android_client_info": {
           "package_name": "com.example.sehati"
         }
       },
+
       "oauth_client": [],
       "api_key": [
         {
           "current_key": "AIzaSyBCCn-JL0QofNz-biy9pXrqlaopcl6RkZQ"
+
         }
       ],
       "services": {
         "appinvite_service": {
+
           "other_platform_oauth_client": []
+
         }
       }
     }

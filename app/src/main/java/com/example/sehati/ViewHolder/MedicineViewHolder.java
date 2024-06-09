@@ -30,17 +30,17 @@ public class MedicineViewHolder extends RecyclerView.ViewHolder {
         _JumlahObat = itemView.findViewById(R.id.tv_amount);
         _addMedicine = itemView.findViewById(R.id.bt_addMedicine);
 
-        _addMedicine.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                int hargaObat = Integer.parseInt(_hargaObat.getText().toString());
-                currentAmount++;
-                totalHarga = (currentAmount * hargaObat)-totalHargaItem;
-                ((BuyMedicine) _context).setTotalHarga(totalHarga);
-                _JumlahObat.setText(String.valueOf(currentAmount));
-
-            }
-        });
+//        _addMedicine.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                int hargaObat = Integer.parseInt(_hargaObat.getText().toString());
+//                currentAmount++;
+//                totalHarga = (currentAmount * hargaObat)-totalHargaItem;
+//                ((BuyMedicine) _context).setTotalHarga(totalHarga);
+//                _JumlahObat.setText(String.valueOf(currentAmount));
+//
+//            }
+//        });
     }
 
 
