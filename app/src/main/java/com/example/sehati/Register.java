@@ -25,6 +25,7 @@ import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import org.mindrot.jbcrypt.BCrypt;
 
 public class Register extends AppCompatActivity {
 
@@ -33,7 +34,6 @@ public class Register extends AppCompatActivity {
     ImageView ivShowHidePassword;
 
     private boolean isPasswordVisible = false;
-
     private FirebaseAuth auth;
     private FirebaseDatabase firebaseDatabase;
     private DatabaseReference databaseReference;
@@ -52,8 +52,7 @@ public class Register extends AppCompatActivity {
 
         auth                = FirebaseAuth.getInstance();
         firebaseDatabase    = FirebaseDatabase.getInstance();
-        databaseReference   = firebaseDatabase.getReference("Registered User");
-
+        databaseReference   = firebaseDatabase.getReference("User");
 
         user                = new User();
 
@@ -90,16 +89,6 @@ public class Register extends AppCompatActivity {
         });
     }
 
-//    @Override
-//    public void onStart() {
-//        super.onStart();
-//        // Check if user is signed in (non-null) and update UI accordingly.
-//        FirebaseUser currentUser = auth.getCurrentUser();
-//        if(currentUser != null){
-//            currentUser.reload();
-//        }
-//    }
-
     private void registerUser(String name, String email, String password){
         auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(Register.this, new OnCompleteListener<AuthResult>() {
             @Override
@@ -108,8 +97,11 @@ public class Register extends AppCompatActivity {
                     FirebaseUser firebaseUser = auth.getCurrentUser();
                     Log.d(TAG, "User registered with ID: " + firebaseUser.getUid());
 
+                    // Hash the password before saving to the database
+                    String hashedPassword = BCrypt.hashpw(password, BCrypt.gensalt());
+
                     // Save user data into realtime database
-                    User userData = new User(name,email);
+                    User userData = new User(name,email, hashedPassword);
 
                     databaseReference.child(firebaseUser.getUid()).setValue(userData);
 
