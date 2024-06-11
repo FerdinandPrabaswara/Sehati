@@ -53,7 +53,7 @@ dependencies {
     implementation("com.google.firebase:firebase-database:21.0.0")
     implementation("com.github.bumptech.glide:glide:4.12.0")
     implementation("com.google.firebase:firebase-auth:23.0.0")
-//    implementation("com.google.firebase:firebase-auth:23.0.0")
+    implementation("com.google.firebase:firebase-storage:21.0.0")
     annotationProcessor("com.github.bumptech.glide:compiler:4.12.0")
     implementation("org.mindrot:jbcrypt:0.4")
     testImplementation("junit:junit:4.13.2")
