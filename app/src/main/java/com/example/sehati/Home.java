@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 
@@ -12,8 +13,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
+import com.bumptech.glide.Glide;
 import com.example.sehati.databinding.ActivityHomeBinding;
 import com.example.sehati.model.User;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -21,6 +25,8 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 public class Home extends AppCompatActivity {
 
@@ -28,7 +34,8 @@ public class Home extends AppCompatActivity {
     private FirebaseDatabase database;
     private DatabaseReference ref;
     private TextView tv_name;
-
+    private FirebaseUser currentUser;
+    private StorageReference storageRef;
     ActivityHomeBinding binding;
     Button moveBuyMedicine;
     @Override
@@ -40,7 +47,11 @@ public class Home extends AppCompatActivity {
         // Get user's name
         auth = FirebaseAuth.getInstance();
         database = FirebaseDatabase.getInstance();
+        currentUser = auth.getCurrentUser();
         ref = database.getReference("User");
+        storageRef = FirebaseStorage.getInstance().getReference("profile_photos").child(currentUser.getUid() + ".jpg");
+
+        loadProfilePhoto();
 
         // Get the current user
         FirebaseUser currentUser = auth.getCurrentUser();
@@ -86,6 +97,13 @@ public class Home extends AppCompatActivity {
             }
         });
 
+        binding.ivProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent profile = new Intent(Home.this, Profile.class);
+                startActivity(profile);
+            }
+        });
 
         binding.relaxMusic.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -96,7 +114,19 @@ public class Home extends AppCompatActivity {
             }
         });
 
+    }
 
-
+    private void loadProfilePhoto() {
+        storageRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+            @Override
+            public void onSuccess(Uri uri) {
+                Glide.with(Home.this).load(uri).into(binding.ivProfile);
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                binding.ivProfile.setImageResource(R.drawable.profile);
+            }
+        });
     }
 }
