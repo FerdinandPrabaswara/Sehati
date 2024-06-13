@@ -40,7 +40,6 @@ public class DoctorAdapter extends RecyclerView.Adapter<DoctorAdapter.DoctorView
         holder.doctorDetail.setText(doctor.getDetail());
         holder.doctorTime.setText(doctor.getTime());
 
-        // Tambahkan click listener untuk button schedule
         holder.scheduleBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
