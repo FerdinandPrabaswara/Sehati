@@ -2,6 +2,7 @@ package com.example.sehati.adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -43,6 +44,11 @@ public class DoctorAdapter extends RecyclerView.Adapter<DoctorAdapter.DoctorView
         holder.scheduleBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Log.d("DoctorAdapter", "Doctor Name: " + doctor.getName());
+                Log.d("DoctorAdapter", "Doctor Detail: " + doctor.getDetail());
+                Log.d("DoctorAdapter", "Doctor Time: " + doctor.getTime());
+                Log.d("DoctorAdapter", "Doctor Price: " + doctor.getPrice());
+
                 Intent intent = new Intent(context, AppointmentDetail.class);
                 intent.putExtra("doctorName", doctor.getName());
                 intent.putExtra("doctorDetail", doctor.getDetail());

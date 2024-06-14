@@ -2,12 +2,14 @@ package com.example.sehati;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class AppointmentDetail extends AppCompatActivity {
+    private static final String TAG = "AppointmentDetail";
     private ImageView backBtn;
     private TextView doctorName, doctorDetail, doctorTime, doctorPrice;
 
@@ -27,6 +29,13 @@ public class AppointmentDetail extends AppCompatActivity {
         String detail = intent.getStringExtra("doctorDetail");
         String time = intent.getStringExtra("doctorTime");
         String price = intent.getStringExtra("doctorPrice");
+
+        // Logging data to check if they are received correctly
+        Log.d(TAG, "Doctor Name: " + name);
+        Log.d(TAG, "Doctor Detail: " + detail);
+        Log.d(TAG, "Doctor Time: " + time);
+        Log.d(TAG, "Doctor Price: " + price);
+
 
         doctorName.setText(name);
         doctorDetail.setText(detail);

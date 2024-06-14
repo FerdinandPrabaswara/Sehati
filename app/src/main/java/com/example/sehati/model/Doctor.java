@@ -6,6 +6,10 @@ public class Doctor {
     private String time;
     private String price;
 
+    public Doctor() {
+
+    }
+
     public Doctor(String name, String detail, String time, String price) {
         this.name = name;
         this.detail = detail;

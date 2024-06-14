@@ -66,6 +66,7 @@ public class OnlineAppointment extends AppCompatActivity {
                 for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
                     Doctor doctor = postSnapshot.getValue(Doctor.class);
                     doctorList.add(doctor);
+                    Log.d("Firebase Data", "Doctor: " + doctor.getName());
                 }
                 doctorAdapter.notifyDataSetChanged();
             }
